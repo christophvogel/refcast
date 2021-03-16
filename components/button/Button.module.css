@@ -1,8 +1,9 @@
 .btn {
   border-radius: 10px;
+  padding: 1em;
 }
 
 .primary {
   color: antiquewhite;
-  background: black;
+  background: var(--spotify-color);
 }
