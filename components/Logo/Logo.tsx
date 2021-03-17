@@ -6,11 +6,10 @@ type LogoProps = {
 
 function Logo({ size }: LogoProps) {
   return (
-    <object
-      data="/logorefcast.svg"
-      type="image/svg+xml"
+    <img
+      src="/logorefcast.svg"
       className={`${styles[size]}`}
-    ></object>
+    />
   );
 }
 
