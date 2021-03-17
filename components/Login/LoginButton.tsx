@@ -7,12 +7,14 @@ function LoginButton() {
   }
 
   return (
-    <button className={`${styles.login}`}>
-      <img src="/spotify-icon.svg" className={`${styles.spotify}`} />
-      <a href="#" onClick={handleClick}>
+    <a href="#" onClick={handleClick}>
+    <button className={styles.login}>
+      <img src="/spotify-icon.svg" className={styles.spotify} />
+      
         Login with Spotify
-      </a>
+     
     </button>
+      </a>
   );
 }
 export default LoginButton;
