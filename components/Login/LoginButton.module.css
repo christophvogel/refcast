@@ -1,7 +1,5 @@
 .login {
   background-color: var(--spotify-color);
-
-  /* padding: 1em; */
   border-radius: 50px;
   border: none;
   font-family: var(--primary-font);
