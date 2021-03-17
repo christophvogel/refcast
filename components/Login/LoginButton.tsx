@@ -8,13 +8,11 @@ function LoginButton() {
 
   return (
     <a href="#" onClick={handleClick}>
-    <button className={styles.login}>
-      <img src="/spotify-icon.svg" className={styles.spotify} />
-      
+      <button className={styles.login}>
+        <img src="/spotify-icon.svg" className={styles.spotify} />
         Login with Spotify
-     
-    </button>
-      </a>
+      </button>
+    </a>
   );
 }
 export default LoginButton;
