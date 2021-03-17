@@ -1,0 +1,15 @@
+.login {
+  background-color: var(--spotify-color);
+  border-radius: 50px;
+  border: none;
+  font-family: var(--primary-font);
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  width: 315px;
+  height: 52px;
+}
+
+.spotify {
+  max-width: 25%;
+}
