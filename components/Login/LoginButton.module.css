@@ -4,11 +4,14 @@
   border: none;
   font-family: var(--primary-font);
   font-size: 16px;
-  display: flex;
   align-items: center;
-  padding: 0 2.5em;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
 }
 
 .spotify {
-  height: 3em;
+  height: 2.5em;
+}
+
+.text {
 }

@@ -10,7 +10,7 @@ function LoginButton() {
     <a href="#" onClick={handleClick}>
       <button className={styles.login}>
         <img src="/spotify-icon.svg" className={styles.spotify} />
-        Login with Spotify
+        <div className={styles.text}>Login with Spotify</div>
       </button>
     </a>
   );

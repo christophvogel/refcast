@@ -1,8 +1,8 @@
 import Head from "next/head";
-
 import styles from "../styles/Home.module.css";
 import Logo from "../components/Logo/Logo";
 import LoginButton from "../components/Login/LoginButton";
+import SkipLoginButton from "../components/SkipLogin/SkipLoginButton";
 
 export default function Home() {
   return (
@@ -13,8 +13,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Logo size="big"></Logo>
-        <LoginButton></LoginButton>
+          <Logo size="big"></Logo>
+          <LoginButton></LoginButton>
+          <SkipLoginButton></SkipLoginButton>
       </main>
     </div>
   );
