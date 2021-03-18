@@ -5,12 +5,7 @@ type LogoProps = {
 };
 
 function Logo({ size }: LogoProps) {
-  return (
-    <img
-      src="/logorefcast.svg"
-      className={`${styles[size]}`}
-    />
-  );
+  return <img src="/refcastlogo.png" className={`${styles[size]}`} />;
 }
 
 export default Logo;
