@@ -6,11 +6,9 @@
   font-size: 16px;
   display: flex;
   align-items: center;
-  width: 315px;
-  height: 52px;
-  column-gap: 15px;
+  padding: 0 2.5em;
 }
 
 .spotify {
-  max-width: 25%;
+  height: 3em;
 }
