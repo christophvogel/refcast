@@ -2,7 +2,6 @@ import styles from "./SkipLoginButton.module.css";
 
 function SkipLoginButton() {
   function handleClick(e) {
-    e.preventDefault();
     alert("This feature will be available in a later version of the app.");
   }
 
