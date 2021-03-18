@@ -13,9 +13,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-          <Logo size="big"></Logo>
-          <LoginButton></LoginButton>
-          <SkipLoginButton></SkipLoginButton>
+        <Logo size="big"></Logo>
+        <LoginButton></LoginButton>
+        <SkipLoginButton></SkipLoginButton>
       </main>
     </div>
   );
