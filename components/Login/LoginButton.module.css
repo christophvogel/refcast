@@ -1,9 +1,6 @@
 .login {
   background-color: var(--spotify-color);
   border-radius: 50px;
-  border: none;
-  font-family: var(--primary-font);
-  font-size: 16px;
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -11,7 +8,4 @@
 
 .spotify {
   height: 2.5em;
-}
-
-.text {
 }

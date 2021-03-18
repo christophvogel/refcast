@@ -1,9 +1,6 @@
 .skip {
   background-color: var(--primary-component-color);
-  border-radius: 50%;
-  border: none;
-  font-family: var(--primary-font);
-  font-size: 16px;
+  border-radius: 50px;
   color: var(--primary-font-color);
   display: flex;
   align-items: center;
