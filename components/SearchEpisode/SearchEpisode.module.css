@@ -1,8 +1,8 @@
 .container {
-  width: 50%;
+  margin: 2em;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  padding: 0 20px;
+  padding: 0 2.5em;
   border-radius: 50px;
   background-color: var(--primary-component-color);
 }
@@ -12,9 +12,8 @@
   padding: 0.65em;
   background-color: var(--primary-component-color);
 }
-::placeholder {
+.input::placeholder {
   color: var(--primary-font-color);
-  opacity: 1;
 }
 
 .searchbtn {
