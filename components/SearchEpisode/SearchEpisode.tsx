@@ -6,7 +6,11 @@ function SearchEpisode() {
       <button className={styles.searchbtn}>
         <img src="/search.svg" className={styles.searchicon} />
       </button>
-      <input className={styles.input} type="text" placeholder="Search" />
+      <input
+        className={styles.input}
+        type="text"
+        placeholder="Search Podcast"
+      />
     </div>
   );
 }
