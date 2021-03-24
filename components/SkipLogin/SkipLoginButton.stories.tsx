@@ -5,4 +5,4 @@ export default {
   title: "Common/Skip Login Button",
 } as Meta;
 
-export const Login = () => <SkipLoginButton />;
+export const Skip = () => <SkipLoginButton />;
