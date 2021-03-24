@@ -3,7 +3,6 @@ import styles from "../styles/Home.module.css";
 import Logo from "../components/Logo/Logo";
 import LoginButton from "../components/Login/LoginButton";
 import SkipLoginButton from "../components/SkipLogin/SkipLoginButton";
-import SearchEpisode from "../components/SearchEpisode/SearchEpisode";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
         <Logo size="big"></Logo>
         <LoginButton></LoginButton>
         <SkipLoginButton></SkipLoginButton>
-        <SearchEpisode />
       </main>
     </div>
   );

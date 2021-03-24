@@ -1,15 +1,11 @@
 import styles from "./LoginButton.module.css";
+import { loginURL } from "./SpotifyAuth";
 
 function LoginButton() {
-  function handleClick(e) {
-    e.preventDefault();
-    console.log("You will be redirected to spotify.");
-  }
-
   return (
-    <a href="#" onClick={handleClick}>
+    <a href={loginURL}>
       <button className={styles.login}>
-        <img src="/spotify-icon.svg" className={styles.spotify} />
+        <img src="/spotify-icon-cut.svg" className={styles.spotify} />
         <div className={styles.text}>Login with Spotify</div>
       </button>
     </a>
