@@ -4,6 +4,6 @@
   color: var(--primary-font-color);
   display: flex;
   align-items: center;
-  padding: 0.65em 3.5em;
+  padding: 1em 3em 1.125em;
   margin-top: 10%;
 }

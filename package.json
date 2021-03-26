@@ -19,9 +19,11 @@
     "build-server": "tsc --project tsconfig.server.json"
   },
   "dependencies": {
+    "js-cookie": "^2.2.1",
     "next": "10.0.8",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "spotify-web-api-js": "^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
