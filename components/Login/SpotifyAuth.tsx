@@ -8,20 +8,24 @@ const scopes = [
   "user-modify-playback-state",
   "user-read-playback-position",
   "user-read-private",
+  "user-read-email",
   "streaming",
   "user-read-currently-playing",
 ];
 
+type URLParts = {
+  [key: string]: string;
+};
 export const getTokenFromUrl = () => {
-  return window.location.hash
+  const parts = window.location.hash
     .substring(1)
     .split("&")
-    .reduce((initial, item) => {
+    .reduce<URLParts>((initial, item) => {
       const parts = item.split("=");
       initial[parts[0]] = decodeURIComponent(parts[1]);
-
       return initial;
     }, {});
+  return parts.access_token;
 };
 
 export const loginURL = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
