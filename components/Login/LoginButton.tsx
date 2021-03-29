@@ -1,5 +1,5 @@
 import styles from "./LoginButton.module.css";
-import { loginURL } from "./SpotifyAuth";
+import { loginURL } from "../../contexts/SpotifyAuth";
 
 function LoginButton() {
   return (
