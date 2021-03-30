@@ -1,7 +1,11 @@
 export const authEndpoint = process.env.SPOTIFY_AUTHORIZE_URL;
 
-const redirectUri = process.env.SPOTIFY_REDIRECT_URI;
-
+let redirectUri;
+if (process.env.MODE_REVIEW) {
+  redirectUri = `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`;
+} else {
+  redirectUri = process.env.SPOTIFY_REDIRECT_URI;
+}
 const clientId = process.env.SPOTIFY_CLIENT_ID;
 
 const scopes = [
