@@ -7,7 +7,21 @@ import {
   useState,
 } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
-import { getTokenFromUrl } from "./SpotifyAuth";
+
+type URLParts = {
+  [key: string]: string;
+};
+export const getTokenFromUrl = () => {
+  const parts = window.location.hash
+    .substring(1)
+    .split("&")
+    .reduce<URLParts>((initial, item) => {
+      const parts = item.split("=");
+      initial[parts[0]] = decodeURIComponent(parts[1]);
+      return initial;
+    }, {});
+  return parts.access_token;
+};
 
 const SpotifyContext = createContext<SpotifyWebApi.SpotifyWebApiJs>(null);
 type SpotifyProviderProps = {
