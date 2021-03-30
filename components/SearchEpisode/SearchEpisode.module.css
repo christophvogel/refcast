@@ -16,6 +16,41 @@
   color: var(--primary-font-color);
 }
 
-.searchbtn {
+.loupe {
+  display: flex;
+  align-items: center;
   background-color: var(--primary-component-color);
+}
+
+.sugg {
+  display: grid;
+  grid-template-columns: 0.3fr 1.7fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0 5px;
+  grid-template-areas:
+    "epipic epiname"
+    "epipic epidate";
+  margin: 0.5em;
+  list-style: none;
+  color: var(--primary-font-color);
+  background-color: var(--primary-component-color);
+  border-radius: 10px;
+  align-items: center;
+}
+
+.epipic {
+  margin: 0.3em;
+  grid-area: epipic;
+  border-radius: 10px;
+}
+.epiname {
+  grid-area: epiname;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.epidate {
+  grid-area: epidate;
+  font-size: 0.8em;
 }
