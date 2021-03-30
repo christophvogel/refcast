@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSpotify } from "../../contexts/SpotifyContext";
 import styles from "./SearchEpisode.module.css";
 
@@ -9,13 +9,23 @@ function SearchEpisode() {
     setSearchResult,
   ] = useState<SpotifyApi.EpisodeSearchResponse>(null);
   const [search, setSearch] = useState<string>("");
+
+  useEffect(() => {
+    if (!search) {
+      return;
+    }
+    const timeoutId = setTimeout(() => {
+      spotify.searchEpisodes(search).then(setSearchResult);
+    }, 300);
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [search]);
+
   return (
     <div>
       <div className={styles.container}>
-        <button
-          onClick={() => spotify.searchEpisodes(search).then(setSearchResult)}
-          className={styles.searchbtn}
-        >
+        <button className={styles.searchbtn}>
           <img src="/search.svg" className={styles.searchicon} />
         </button>
         <input
