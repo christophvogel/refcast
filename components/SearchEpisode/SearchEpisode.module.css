@@ -1,8 +1,11 @@
-.container {
+.search_container {
+  width: 100%;
+}
+.search {
   margin: 2em;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  padding: 0 2.5em;
+  padding: 0 1.5em;
   border-radius: 50px;
   background-color: var(--primary-component-color);
 }
@@ -11,6 +14,8 @@
   color: var(--primary-font-color);
   padding: 0.65em;
   background-color: var(--primary-component-color);
+  border: none;
+  outline: none;
 }
 .input::placeholder {
   color: var(--primary-font-color);
@@ -49,8 +54,15 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  align-self: end;
 }
 .epidate {
   grid-area: epidate;
   font-size: 0.8em;
+  align-self: start;
+}
+
+.sugg_container {
+  padding-right: 10%;
+  padding-left: 10%;
 }

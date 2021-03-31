@@ -23,8 +23,8 @@ function SearchEpisode() {
   }, [search]);
 
   return (
-    <div>
-      <div className={styles.container}>
+    <div className={styles.search_container}>
+      <div className={styles.search}>
         <div className={styles.loupe}>
           <img src="/search.svg" className={styles.searchicon} />
         </div>
@@ -37,7 +37,7 @@ function SearchEpisode() {
         />
       </div>
 
-      <ul>
+      <div className={styles.sugg_container}>
         {searchResult?.episodes.items.map((item) => (
           <li className={styles.sugg} key={item.id}>
             <img
@@ -49,7 +49,7 @@ function SearchEpisode() {
             <div className={styles.epidate}>{item.release_date}</div>
           </li>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
