@@ -5,4 +5,6 @@ export default {
   title: "Common/Episode Info",
 } as Meta;
 
-export const Info = () => <EpisodeInfo />;
+export const Info = () => (
+  <EpisodeInfo episodeName="Lorem ipsum" imgSrc="/festflausch.jpeg" />
+);
