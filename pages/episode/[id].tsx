@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import EpisodeInfo from "../../components/EpisodeInfo/EpisodeInfo";
 import { useSpotify } from "../../contexts/SpotifyContext";
 
 function EpisodePage() {
@@ -27,8 +28,7 @@ function EpisodePage() {
 
   return (
     <div>
-      {episode.name}
-      <img src={episode.images[1]?.url}></img>
+      <EpisodeInfo episodeName={episode.name} imgSrc={episode.images[1]?.url} />
     </div>
   );
 }

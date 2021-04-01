@@ -1,10 +1,15 @@
 import styles from "./EpisodeInfo.module.css";
 
-function EpisodeInfo() {
+export type EpisodeProps = {
+  episodeName: string;
+  imgSrc: string;
+};
+
+function EpisodeInfo({ episodeName, imgSrc }: EpisodeProps) {
   return (
     <div className={styles.info_container}>
-      <div className={styles.info_title}>Lorem ipsum dolor sit.</div>
-      <img className={styles.info_pic} src="/festflausch.jpeg" alt="lorem" />
+      <div className={styles.info_title}>{episodeName}</div>
+      <img className={styles.info_pic} src={imgSrc} alt={episodeName} />
     </div>
   );
 }
