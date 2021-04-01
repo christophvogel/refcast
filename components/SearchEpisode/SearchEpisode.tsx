@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSpotify } from "../../contexts/SpotifyContext";
 import styles from "./SearchEpisode.module.css";
+import { useRouter } from "next/router";
 
 function SearchEpisode() {
   const spotify = useSpotify();
@@ -9,6 +10,7 @@ function SearchEpisode() {
     setSearchResult,
   ] = useState<SpotifyApi.EpisodeSearchResponse>(null);
   const [search, setSearch] = useState<string>("");
+  const router = useRouter();
 
   useEffect(() => {
     if (!search) {
@@ -23,8 +25,8 @@ function SearchEpisode() {
   }, [search]);
 
   return (
-    <div>
-      <div className={styles.container}>
+    <div className={styles.search_container}>
+      <div className={styles.search}>
         <div className={styles.loupe}>
           <img src="/search.svg" className={styles.searchicon} />
         </div>
@@ -37,9 +39,15 @@ function SearchEpisode() {
         />
       </div>
 
-      <ul>
+      <div className={styles.sugg_container}>
         {searchResult?.episodes.items.map((item) => (
-          <li className={styles.sugg} key={item.id}>
+          <li
+            className={styles.sugg}
+            key={item.id}
+            onClick={() => {
+              router.push(`/episode/${item.id}`);
+            }}
+          >
             <img
               className={styles.epipic}
               src={item.images[2]?.url}
@@ -49,7 +57,7 @@ function SearchEpisode() {
             <div className={styles.epidate}>{item.release_date}</div>
           </li>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
