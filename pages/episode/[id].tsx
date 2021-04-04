@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import EpisodeInfo from "../../components/EpisodeInfo/EpisodeInfo";
+import ReferenceList from "../../components/ReferenceList/ReferenceList";
 import { useSpotify } from "../../contexts/SpotifyContext";
 
 function EpisodePage() {
@@ -29,6 +30,7 @@ function EpisodePage() {
   return (
     <div>
       <EpisodeInfo episodeName={episode.name} imgSrc={episode.images[1]?.url} />
+      <ReferenceList refTopic="Lorem Ipsum" timeCode="35:14" />
     </div>
   );
 }
