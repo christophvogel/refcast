@@ -1,5 +1,5 @@
-import { useRouter } from "next/router";
 import styles from "./ReferenceList.module.css";
+import Link from "next/link";
 
 export type ReferenceProps = {
   refTopic: string;
@@ -7,16 +7,12 @@ export type ReferenceProps = {
 };
 
 function ReferenceList({ refTopic, timeCode }: ReferenceProps) {
-  const router = useRouter();
   return (
     <div className={styles.container}>
-      <div
-        className={styles.addbtn}
-        onClick={() => {
-          router.push(`/add`);
-        }}
-      >
-        <img src="/addbtn.svg" />
+      <div className={styles.addbtn}>
+        <Link href="/add">
+          <img src="/addbtn.svg" />
+        </Link>
       </div>
       <div className={styles.item}>
         <div className={styles.time}>{timeCode}</div>

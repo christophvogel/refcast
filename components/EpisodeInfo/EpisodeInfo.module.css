@@ -1,7 +1,7 @@
 .info_container {
   margin: 3%;
   display: grid;
-  grid-template-columns: 0.2fr 1.8fr;
+  grid-template-columns: 0.2fr 30fr;
   grid-template-rows: 0.1fr 1.9fr;
   grid-template-areas:
     "back info_title"

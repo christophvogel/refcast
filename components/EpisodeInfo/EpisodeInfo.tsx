@@ -1,5 +1,5 @@
 import styles from "./EpisodeInfo.module.css";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 export type EpisodeProps = {
   episodeName: string;
@@ -7,16 +7,11 @@ export type EpisodeProps = {
 };
 
 function EpisodeInfo({ episodeName, imgSrc }: EpisodeProps) {
-  const router = useRouter();
   return (
     <div className={styles.info_container}>
-      <img
-        className={styles.back}
-        onClick={() => {
-          router.push(`/search`);
-        }}
-        src="/back.svg"
-      />
+      <Link href="/search">
+        <img className={styles.back} src="/back.svg" />
+      </Link>
       <div className={styles.info_title}>{episodeName}</div>
       <img className={styles.info_pic} src={imgSrc} alt={episodeName} />
     </div>
