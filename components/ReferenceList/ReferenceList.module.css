@@ -1,0 +1,34 @@
+.container {
+  background-color: var(--primary-component-color);
+  border-radius: 10px;
+  margin: 10%;
+  padding: 2%;
+  height: 35vh;
+  overflow: scroll;
+}
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  display: flex;
+  border-bottom: var(--primary-font-color) 1px dotted;
+  padding: 1%;
+  width: 90%;
+}
+.topic {
+  padding-left: 3%;
+}
+
+.time {
+  font-family: var(--secondary-font);
+  color: var(--timecode-color);
+  font-size: 0.8em;
+  align-self: center;
+}
+
+.addbtn {
+  float: right;
+  position: sticky;
+  top: 0;
+}
