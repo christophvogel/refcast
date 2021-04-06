@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import EpisodeInfo from "../../components/EpisodeInfo/EpisodeInfo";
 import ReferenceList from "../../components/ReferenceList/ReferenceList";
 import { useSpotify } from "../../contexts/SpotifyContext";
+import { PodcastEntry } from "../../server/db";
 
 function EpisodePage() {
   const spotify = useSpotify();
@@ -17,10 +18,17 @@ function EpisodePage() {
     null
   );
 
+  const [episodeReferences, setEpisodeReferences] = useState<PodcastEntry>(
+    null
+  );
+
   useEffect(() => {
     spotify.getEpisode(id).then((newEpisode) => {
       setEpisode(newEpisode);
     });
+    fetch(`/api/episode/${id}`)
+      .then((result) => result.json())
+      .then(setEpisodeReferences);
   }, [id]);
 
   if (!episode) {
@@ -30,7 +38,20 @@ function EpisodePage() {
   return (
     <div>
       <EpisodeInfo episodeName={episode.name} imgSrc={episode.images[1]?.url} />
-      <ReferenceList refTopic="Lorem Ipsum" timeCode="35:14" />
+      {!episodeReferences?.references.length ? (
+        <ReferenceList
+          refTopic="Add reference via + button."
+          timeCode="__:__"
+        />
+      ) : (
+        episodeReferences.references.map((reference) => (
+          <ReferenceList
+            key={reference.timecode}
+            refTopic={reference.name}
+            timeCode={reference.timecode}
+          />
+        ))
+      )}
     </div>
   );
 }
