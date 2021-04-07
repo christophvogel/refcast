@@ -68,3 +68,12 @@ export async function getPodcastEntry(spotifyId) {
   }
   return podcastEntry;
 }
+
+export async function updateReference(id, fieldsToUpdate: Partial<Reference>) {
+  const employeeCollection = await getCollection("reference_example");
+  const updateResult = await employeeCollection.updateOne(
+    { spotify_id: id },
+    { $push: { references: fieldsToUpdate } }
+  );
+  return updateResult.modifiedCount >= 1;
+}

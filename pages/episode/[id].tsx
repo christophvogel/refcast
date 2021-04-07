@@ -5,7 +5,6 @@ import ReferenceList from "../../components/ReferenceList/ReferenceList";
 import { useSpotify } from "../../contexts/SpotifyContext";
 import { PodcastEntry } from "../../server/db";
 import styles from "../../components/ReferenceList/ReferenceList.module.css";
-import Link from "next/link";
 
 function EpisodePage() {
   const spotify = useSpotify();
@@ -47,10 +46,13 @@ function EpisodePage() {
         />
       ) : (
         <div className={styles.container}>
-          <div className={styles.addbtn}>
-            <Link href="/add">
-              <img src="/addbtn.svg" />
-            </Link>
+          <div
+            onClick={() => {
+              router.push(`/add/${id}`);
+            }}
+            className={styles.addbtn}
+          >
+            <img src="/addbtn.svg" />
           </div>
           {episodeReferences.references.map((reference) => (
             <div key={reference.timecode}>

@@ -3,10 +3,10 @@ import styles from "./AddReference.module.css";
 function AddReference() {
   return (
     <div className={styles.container}>
-      <form>
+      <form className={styles.form}>
         <div>
           <label>
-            Timecode{" "}
+            Timecode
             <input
               className={styles.timecode}
               type="text"
