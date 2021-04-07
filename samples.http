@@ -1,0 +1,23 @@
+### GET Reference Collection
+GET http://localhost:3000/api/reference_example
+
+### POST 
+POST http://localhost:3000/api/reference_example
+Content-Type: application/json
+
+{
+    "spotify_id": "12345611111",
+    "references": [{"name": "test", "timecode": "02:34"}, {"name": "test2", "timecode": "05:34"}]
+    
+} 
+
+###
+GET http://localhost:3000/api/episode/323432523457
+
+###
+PATCH http://localhost:3000/api/episode/323432523457
+Content-Type: application/json
+
+{
+    "name": "test", "timecode": "02:34"
+} 
