@@ -4,6 +4,8 @@ import EpisodeInfo from "../../components/EpisodeInfo/EpisodeInfo";
 import ReferenceList from "../../components/ReferenceList/ReferenceList";
 import { useSpotify } from "../../contexts/SpotifyContext";
 import { PodcastEntry } from "../../server/db";
+import styles from "../../components/ReferenceList/ReferenceList.module.css";
+import Link from "next/link";
 
 function EpisodePage() {
   const spotify = useSpotify();
@@ -44,13 +46,31 @@ function EpisodePage() {
           timeCode="__:__"
         />
       ) : (
-        episodeReferences.references.map((reference) => (
-          <ReferenceList
-            key={reference.timecode}
-            refTopic={reference.name}
-            timeCode={reference.timecode}
-          />
-        ))
+        <div className={styles.container}>
+          <div className={styles.addbtn}>
+            <Link href="/add">
+              <img src="/addbtn.svg" />
+            </Link>
+          </div>
+          {episodeReferences.references.map((reference) => (
+            <div key={reference.timecode}>
+              <div className={styles.item}>
+                <div className={styles.time}>{reference.timecode}</div>
+                <div
+                  className={styles.topic}
+                  onClick={() => {
+                    window.open(
+                      `http://www.google.com/search?q=${reference.name}`,
+                      "_blank"
+                    );
+                  }}
+                >
+                  {reference.name}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
