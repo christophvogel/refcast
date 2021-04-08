@@ -42,7 +42,7 @@ export async function getRefs(collectioName) {
 }
 
 export async function createRefs(newRef) {
-  const orderCollection = await getCollection("reference_example");
+  const orderCollection = await getCollection("references");
   return await orderCollection.insertOne(newRef);
 }
 
@@ -51,7 +51,7 @@ export function closeDB() {
 }
 
 export async function createPodcastEntry(spotifyId) {
-  const podcastCollection = await getCollection("reference_example");
+  const podcastCollection = await getCollection("references");
   return await podcastCollection.insertOne({
     spotify_id: spotifyId,
     references: [],
@@ -59,7 +59,7 @@ export async function createPodcastEntry(spotifyId) {
 }
 
 export async function getPodcastEntry(spotifyId) {
-  const podcastCollection = await getCollection("reference_example");
+  const podcastCollection = await getCollection("references");
   const podcastEntry = await podcastCollection.findOne({
     spotify_id: spotifyId,
   });
@@ -70,7 +70,7 @@ export async function getPodcastEntry(spotifyId) {
 }
 
 export async function updateReference(id, fieldsToUpdate: Partial<Reference>) {
-  const employeeCollection = await getCollection("reference_example");
+  const employeeCollection = await getCollection("references");
   const updateResult = await employeeCollection.updateOne(
     { spotify_id: id },
     { $push: { references: fieldsToUpdate } }
