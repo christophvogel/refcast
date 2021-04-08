@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Logo from "../../components/Logo/Logo";
 
 import styles from "../../components/AddReference/AddReference.module.css";
 
