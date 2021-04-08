@@ -1,14 +1,23 @@
 .container {
-  display: grid;
   font-size: 20pt;
 }
 
+.form {
+  margin-top: 20%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr 3.4fr;
+  gap: 5% 0%;
+  grid-template-areas:
+    "timelabel timecode"
+    "reflabel reflabel"
+    "reference reference"
+    "btn btn";
+}
 .add {
   background-color: var(--primary-component-color);
   border-radius: 50px;
   color: var(--primary-font-color);
-  display: flex;
-  align-items: center;
   padding: 1em 3em 1.125em;
   margin-top: 10%;
 }
@@ -20,13 +29,55 @@
   border-radius: 5px;
   font-size: 20pt;
   width: 90px;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  grid-area: timecode;
+}
+.timecode::placeholder {
+  color: var(--timecode-color);
+  padding-left: 10%;
 }
 
 .reference {
   color: var(--primary-font-color);
   background-color: var(--primary-component-color);
   border-radius: 5px;
-  font-size: 20pt;
+  font-size: 18pt;
+  grid-area: reference;
+}
+.reference::placeholder {
+  color: var(--primary-font-color);
+}
+.main {
+  padding: 5rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timelabel {
+  grid-area: timelabel;
+}
+.reflabel {
+  margin-top: 10%;
+  grid-area: reflabel;
+}
+.btn {
+  grid-area: btn;
+  justify-self: center;
+}
+
+.topnav {
+  display: grid;
+  grid-template-columns: 0.1fr 10fr;
+  grid-template-rows: 1fr;
+  gap: 0 3.5em;
+  grid-template-areas: "back logo";
+}
+.logo {
+  width: 8.6em;
+  grid-area: logo;
+}
+.back {
+  grid-area: back;
 }
