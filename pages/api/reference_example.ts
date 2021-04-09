@@ -9,7 +9,7 @@ export default withDatabase(
         res.status(200).json(req.body);
       });
     } else {
-      const list = await getRefs("reference_example");
+      const list = await getRefs("references");
       res.status(200).json(list);
     }
     return res.status(405).end();

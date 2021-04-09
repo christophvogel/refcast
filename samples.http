@@ -1,8 +1,8 @@
 ### GET Reference Collection
-GET http://localhost:3000/api/reference_example
+GET http://localhost:3000/api/references
 
 ### POST 
-POST http://localhost:3000/api/reference_example
+POST http://localhost:3000/api/references
 Content-Type: application/json
 
 {

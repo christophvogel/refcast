@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
-import Logo from "../../components/Logo/Logo";
 
 import styles from "../../components/AddReference/AddReference.module.css";
 
@@ -25,35 +24,44 @@ function AddPage() {
   };
 
   return (
-    <main>
-      <Logo size="small"></Logo>
+    <main className={styles.main}>
+      <div className={styles.topnav}>
+        <img
+          className={styles.back}
+          src="/back.svg"
+          onClick={() => {
+            router.push(`/episode/${id}`);
+          }}
+        />
+        <img src="/refcastlogo.png" className={styles.logo} />
+      </div>
       <div className={styles.container}>
         <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
-          <div>
-            <label>
-              Timecode
-              <input
-                className={styles.timecode}
-                type="text"
-                maxLength={6}
-                value={timecodeValue}
-                onChange={(event) => setTimecodeValue(event.target.value)}
-              ></input>
-            </label>
+          <label className={styles.timelabel}>Timecode</label>
+          <input
+            required
+            className={styles.timecode}
+            type="text"
+            maxLength={6}
+            placeholder="00:00"
+            value={timecodeValue}
+            onChange={(event) => setTimecodeValue(event.target.value)}
+          ></input>
+
+          <label className={styles.reflabel}>Reference</label>
+          <input
+            required
+            placeholder="Add reference here..."
+            className={styles.reference}
+            value={referenceName}
+            onChange={(event) => setReferenceName(event.target.value)}
+          ></input>
+
+          <div className={styles.btn}>
+            <button className={styles.add} type="submit">
+              ADD
+            </button>
           </div>
-          <div>
-            <label>
-              Reference
-              <input
-                className={styles.reference}
-                value={referenceName}
-                onChange={(event) => setReferenceName(event.target.value)}
-              ></input>
-            </label>
-          </div>
-          <button className={styles.add} type="submit">
-            ADD
-          </button>
         </form>
       </div>
     </main>
