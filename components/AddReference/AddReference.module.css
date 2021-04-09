@@ -27,8 +27,12 @@
   color: var(--timecode-color);
   background-color: var(--primary-component-color);
   border-radius: 5px;
-  font-size: 20pt;
+  font-size: 18pt;
   width: 90px;
+  margin-left: 5%;
+  padding: 3%;
+  cursor: pointer;
+  outline: none;
   grid-area: timecode;
 }
 .timecode::placeholder {
@@ -40,8 +44,11 @@
   color: var(--primary-font-color);
   background-color: var(--primary-component-color);
   border-radius: 5px;
-  font-size: 18pt;
+  font-size: 16pt;
   grid-area: reference;
+  padding: 3%;
+  cursor: pointer;
+  outline: none;
 }
 .reference::placeholder {
   color: var(--primary-font-color);

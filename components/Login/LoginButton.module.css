@@ -4,6 +4,7 @@
   align-items: center;
   display: grid;
   grid-template-columns: 1fr 4fr;
+  outline: none;
 }
 
 .spotify {
