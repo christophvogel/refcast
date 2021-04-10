@@ -1,34 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ![refcast](public/refcastlogo.png)
 
-## Getting Started
+[![Build Status](https://img.shields.io/travis/npm/npm/latest.svg?style=flat-square)](https://travis-ci.org/npm/npm) [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/npm) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/your/your-project/blob/master/LICENSE)
 
-First, run the development server:
+This is my capstone project for the Neue Fische Web Development bootcamp I attended in spring of 2021.
 
-```bash
+With refcast you can find out about references from podcast episodes. Recommended topics are posted by the users of the app and listed for the respective episode. So it’s possible to get recommendations from podcast episodes without having to listen to the episode again.
+
+## Installing / Getting started
+
+To run locally, install the dependencies and run the development server.
+
+```shell
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Now you should be able to run the game on port 3000.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Developing
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Built With
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Next.js
+- mongodb
+- Spotify API
+- TypeScript
+- storybook
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+None needed, just install the dependencies with `npm install`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Setting up Dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you want to add or change something, feel free to do.
 
-## Deploy on Vercel
+```shell
+git clone git@github.com:christophvogel/refcast.git
+cd refcast
+npm install
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Dependencies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Create-Next.js-App](https://nextjs.org/docs/api-reference/create-next-app)
+- [Storybook](https://storybook.js.org/)
+- [TypeScript](https://nextjs.org/learn/excel/typescript)
+- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/)
+- [Husky](https://github.com/typicode/husky)
+- [Lint-Staged](https://github.com/okonet/lint-staged)
+
+- [nodemon](https://github.com/remy/nodemon)
+
+- [dotenv](https://github.com/motdotla/dotenv)
+- [mongoDB](https://www.mongodb.com/)
+- [Spotify API](https://developer.spotify.com/documentation/web-api/)
+- [OAuth](https://oauth.net/)
+- [Context API](https://reactjs.org/docs/context.html)
+- [Custom server for next](https://nextjs.org/docs/advanced-features/custom-server)
+- [TypeScript for custom server + nodemon](https://github.com/vercel/next.js/tree/canary/examples/custom-server-typescript)
